@@ -14,20 +14,21 @@ DONE WITH PART C!
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 1. Created a new about.html. This html gives a brief basic description of the company. 
-2. Added a return to mainscreen button in this page to take us back to the main page. 
-3. In the mainscreen.html code I added an "About" button mapped to the about.html page. this can be found in lines 57-58.
+2. Added a return to mainscreen button in this page to take us back to the main page via the mainscreen controller. 
+3. Created a new java class controller titled "AboutController"
+4. In the new AboutController I pretty much only included a GetMapping with a showpage method to return the page. This controller does not really have to do anything. Alternatiely I could have also just added this to the maincontroller. 
+5. Finally, in the mainscreen.html code, I added an about button mapped to the aboutcontroller to return the about page. Lines 57-58.
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
-
-
 Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
-
+Added sample data to the bootstrapdata class. 
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
-
+added buy now button to the mainscreen.html
+Created a new buyproductcontroller class. 
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
