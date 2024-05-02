@@ -11,12 +11,51 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>My Bicycle Shop</title>
+    <title>Stephen's Furniture Store</title>
+
+    <!-- adding Style to make website look coolish -->
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?furniture');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #fff;
+        }
+        table {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        th, td {
+            color: #000;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+
+
 </head>
 <body>
 
 <div class="container">
-    <h1>Shop</h1>
+    <h1>Stephen's Furniture Store</h1>
+    <!-- Add the following line for the About page button -->
+    <a href="about.html" class="btn btn-primary btn-sm mb-3">About</a>
     <hr>
     <h2>Parts</h2>
     <form th:action="@{/mainscreen}">
