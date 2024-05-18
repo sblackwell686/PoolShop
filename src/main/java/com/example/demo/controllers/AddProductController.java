@@ -12,10 +12,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -31,6 +33,8 @@ public class AddProductController {
     private List<Part> theParts;
     private static Product product1;
     private Product product;
+    private ProductService productService;
+
 
     @GetMapping("/showFormAddProduct")
     public String showFormAddPart(Model theModel) {
@@ -172,5 +176,27 @@ public class AddProductController {
         }
         theModel.addAttribute("availparts",availParts);
         return "productForm";
+    }
+
+    @PostMapping("/buyProduct")
+    public String buyProduct(@RequestParam("productId") Long productId, RedirectAttributes redirectAttributes) {
+        Product product = productService.findById(productId.intValue()); //fix look at product service . product id if empty
+
+        if (product != null) {
+            //Product product = Product.get();
+
+            if (product.getInv() > 0) {
+                product.setInv(product.getInv() - 1);
+                productService.save(product);
+                redirectAttributes.addFlashAttribute("successMessage", "Product purchased successfully!");
+                return "redirect:purchaseSuccess";
+            } else {
+                redirectAttributes.addFlashAttribute("errorMessage", "Product is out of stock.");
+                return "redirect:purchaseError";
+            }
+        } else {
+            redirectAttributes.addFlashAttribute("errorMessage", "Product not found.");
+            return "redirect:purchaseError";
+        }
     }
 }
