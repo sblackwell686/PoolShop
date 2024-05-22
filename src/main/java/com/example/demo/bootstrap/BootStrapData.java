@@ -53,24 +53,32 @@ public class BootStrapData implements CommandLineRunner {
             screws.setInv(12560);
             screws.setPrice(.01);
             screws.setId(10);
+            screws.setMinInv(500);
+            screws.setMaxInv(3000);
 
             glass.setCompanyName("Denver Supply Co");
             glass.setName("glass");
             glass.setInv(100);
             glass.setPrice(49.99);
             glass.setId(11);
+            glass.setMinInv(10);
+            glass.setMaxInv(1000);
 
             doorknob.setCompanyName("Denver Supply Co");
             doorknob.setName("door knob");
             doorknob.setInv(100);
             doorknob.setPrice(9.99);
             doorknob.setId(12);
+            doorknob.setMinInv(10);
+            doorknob.setMaxInv(1000);
 
             shelvingbracket.setCompanyName("Denver Supply Co");
             shelvingbracket.setName("shelving bracket");
             shelvingbracket.setInv(1000);
             shelvingbracket.setPrice(.99);
             shelvingbracket.setId(13);
+            shelvingbracket.setMinInv(500);
+            shelvingbracket.setMaxInv(3000);
 
             //saving parts to repository
             outsourcedPartRepository.save(screws);
@@ -86,6 +94,8 @@ public class BootStrapData implements CommandLineRunner {
             wood.setInv(1000);
             wood.setPrice(4.99);
             wood.setId(1);
+            wood.setMinInv(100);
+            wood.setMaxInv(5000);
 
             //save to repository
             partRepository.save(wood);

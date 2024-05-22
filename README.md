@@ -23,6 +23,12 @@ E.  Add a sample inventory appropriate for your chosen store to the application.
 Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
 Added sample data to the bootstrapdata class. 
 
+1. In the BootStrapData class, (Lines 41-110) I added all the sample data. I included 4 outsourced parts, 1 insourced part, and 5 products. 
+2. Lines 42 and 92 check to see that the parts and product count are at 0 before adding the sample data. 
+3. Lines 44-80 I added 4 outsourced parts (each was set with a company name, part name, id, inventory and price). I also added each to the repository. 
+4. Lines 81-92 I added 1 insourced part. I also added this part to the repository. 
+5. Lines 97-110 I added 5 products from the Product class following the constructor. I also saved these products to the repository. 
+
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
@@ -37,7 +43,24 @@ G.  Modify the parts to track maximum and minimum inventory by doing the followi
 •  Rename the file the persistent storage is saved to.
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
 
-
+1. In the Part.java class: 
+   2. Lines 31-34 I added the additional fields for maximum and minimum inventory. 
+   3. Line 45. Added new fields to the constructor for part
+   4. Lines 48-49: Added values to constructors. 
+   5. I repeated steps 3 and 4 above for the Part constructor below it starting at line 52.
+   6. Lines 93-107: I added getters and setter to the new maxInv and minInv fields.
+7. In the BootStrapData class: 
+   8. Adding all of the max and min values to sample part data (lines 55-56, 64-65, 72-73, 80-81, 97-98)
+9. In the InhousePartForm: 
+   10. Lines 24-29: Added the text inputs for min and maxInv field for new in house parts. 
+11. In the OutsourcedPartForm: 
+    12. Lines 25-29: Added the text inputs for minInv and maxInv fields for new outsourced parts. 
+13. Back in the Part.java class, in lines 117-119 I added an isInventoryValid() method. 
+14. In the AddOutsourcedPartController.java:
+    15. In lines 43-47 I added a validation check to see that the new input is valid. If not, it writes an error.
+16. In the AddInhousePartController.java:
+    17. In lines 43-47 I added the validation check to see that the new input is valid. If not, it writes an error. 
+   
 H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
