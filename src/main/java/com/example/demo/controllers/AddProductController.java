@@ -177,26 +177,4 @@ public class AddProductController {
         theModel.addAttribute("availparts",availParts);
         return "productForm";
     }
-
-    @PostMapping("/buyProduct")
-    public String buyProduct(@RequestParam("productId") Long productId, RedirectAttributes redirectAttributes) {
-        Product product = productService.findById(productId.intValue()); //fix look at product service . product id if empty
-
-        if (product != null) {
-            //Product product = Product.get();
-
-            if (product.getInv() > 0) {
-                product.setInv(product.getInv() - 1);
-                productService.save(product);
-                redirectAttributes.addFlashAttribute("successMessage", "Product purchased successfully!");
-                return "redirect:purchaseSuccess";
-            } else {
-                redirectAttributes.addFlashAttribute("errorMessage", "Product is out of stock.");
-                return "redirect:purchaseError";
-            }
-        } else {
-            redirectAttributes.addFlashAttribute("errorMessage", "Product not found.");
-            return "redirect:purchaseError";
-        }
-    }
 }
