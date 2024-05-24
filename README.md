@@ -34,7 +34,19 @@ F.  Add a “Buy Now” button to your product list. Your “Buy Now” button m
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
 added buy now button to the mainscreen.html
-Created a new buyproductcontroller class. 
+1. Created a new buyproductcontroller class from scratch.  
+   2. This controller is to handle the buy now button request from the mainscreen.html (will add button next)
+   3. This controller has autowired productrepository object to handle inventory to decrease it by one. 
+   4. This controller also incorporates methods to obtain the productId.
+   5. This controller also has a option product that find the id to take care of any requests of something that may not be in the database. 
+   6. I also added logic to map the purchase to a success or error message after purchasing. 
+7. In the mainscreen:
+   8. Lines 124-127, I added a buynow button.
+      9. This button is mapped to the controller above.
+      10. This button is set to POST request to update the product.
+      11. This button is also passes through a hidden input so that the product id will go to the controller. 
+12. I created a new purchaseError.html from scratch. 
+13. I created a new purchaseSuccess.html from scratch. 
 
 G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
@@ -66,7 +78,12 @@ H.  Add validation for between or at the maximum and minimum fields. The validat
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
 
-
+1. In the AddInhousePartController: 
+   2. Lines 44-49: Commented out old code for reference. Added an if else logic to give a display an error message if the inventory gets too low or too high
+3. In the AddOutsourcedPartController.java:
+   4. In lines 45-51: Commented out old code for refence. Added an if else logic to give a display an error message if the inventory gets too low or too high. 
+5. In the EnufPartValidator.java class
+   6. Lines 36-47: added a statement that will check if any of the parts for the product would go below there minimum if a particular product was made. Added an error message as well. 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
 

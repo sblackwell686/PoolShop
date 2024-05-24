@@ -42,8 +42,13 @@ public class AddOutsourcedPartController {
         theModel.addAttribute("outsourcedpart",part);
 
         // Check if inventory is valid
-        if(!part.isInventoryValid()) {
-            bindingResult.rejectValue("inv", "error.outsourcedPart", "Inventory must be between the minimum and maximum values.");
+        //if(!part.isInventoryValid()) {
+            //bindingResult.rejectValue("inv", "error.outsourcedPart", "Inventory must be between the minimum and maximum values.");
+        //}
+        if (part.getInv() < part.getMinInv()) {
+            bindingResult.rejectValue("inv", "error.outsourcedPart", "Inventory must not be below the minimum value.");
+        } else if (part.getInv() > part.getMaxInv()) {
+            bindingResult.rejectValue("inv", "error.outsourcedPart", "Inventory must not exceed the maximum value.");
         }
 
         if(bindingResult.hasErrors()){
