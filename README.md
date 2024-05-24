@@ -86,6 +86,8 @@ H.  Add validation for between or at the maximum and minimum fields. The validat
    6. Lines 36-47: added a statement that will check if any of the parts for the product would go below there minimum if a particular product was made. Added an error message as well. 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
+1. In the PartTest.java file:
+   2. Lines 160-178 added two unit tests. One for minInv and one for maxInv. 
 
 J.  Remove the class files for any unused validators in order to clean your code.
 
