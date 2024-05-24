@@ -90,6 +90,6 @@ I.  Add at least two unit tests for the maximum and minimum fields to the PartTe
    2. Lines 160-178 added two unit tests. One for minInv and one for maxInv. push
 
 J.  Remove the class files for any unused validators in order to clean your code.
-
+1. Looked through validators and analzyed my code for any unused declarations. 
 
 K.  Demonstrate professional communication in the content and presentation of your submission.
