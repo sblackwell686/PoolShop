@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>ProductTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #5f826b; font-style: italic;}
+.s4 { color: #68a67e; font-style: italic;}
+.s5 { color: #2aacb8;}
+.s6 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ProductTest.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">demo</span><span class="s2">.</span><span class="s1">domain</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">BeforeEach</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">Test</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">HashSet</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Set</span><span class="s2">;</span>
+
+<span class="s0">import static </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">Assertions</span><span class="s2">.*;</span>
+
+<span class="s3">/**</span>
+ <span class="s3">* Project: demo</span>
+ <span class="s3">* Package: com.example.demo.domain</span>
+ <span class="s3">* </span><span class="s4">&lt;p&gt;</span>
+ <span class="s3">* User: carolyn.sher</span>
+ <span class="s3">* Date: 4/28/2022</span>
+ <span class="s3">* Time: 4:01 PM</span>
+ <span class="s3">* </span><span class="s4">&lt;p&gt;</span>
+ <span class="s3">* Created with IntelliJ IDEA</span>
+ <span class="s3">* To change this template use File | Settings | File Templates.</span>
+ <span class="s3">*/</span>
+<span class="s0">class </span><span class="s1">ProductTest </span><span class="s2">{</span>
+    <span class="s1">Product product</span><span class="s2">;</span>
+    <span class="s1">@BeforeEach</span>
+    <span class="s0">public void </span><span class="s1">setUp</span><span class="s2">(){</span>
+        <span class="s1">product</span><span class="s2">=</span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+    <span class="s2">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getId</span><span class="s2">() {</span>
+        <span class="s1">Long idValue</span><span class="s2">=</span><span class="s5">4L</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getId</span><span class="s2">(), </span><span class="s1">idValue</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setId</span><span class="s2">() {</span>
+        <span class="s1">Long idValue</span><span class="s2">=</span><span class="s5">4L</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getId</span><span class="s2">(), </span><span class="s1">idValue</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getName</span><span class="s2">() {</span>
+        <span class="s1">String name</span><span class="s2">=</span><span class="s6">&quot;test product&quot;</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setName</span><span class="s2">() {</span>
+        <span class="s1">String name</span><span class="s2">=</span><span class="s6">&quot;test product&quot;</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getPrice</span><span class="s2">() {</span>
+        <span class="s0">double </span><span class="s1">price</span><span class="s2">=</span><span class="s5">1.0</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setPrice</span><span class="s2">(</span><span class="s1">price</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">price</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getPrice</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setPrice</span><span class="s2">() {</span>
+        <span class="s0">double </span><span class="s1">price</span><span class="s2">=</span><span class="s5">1.0</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setPrice</span><span class="s2">(</span><span class="s1">price</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">price</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getPrice</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getInv</span><span class="s2">() {</span>
+        <span class="s0">int </span><span class="s1">inv</span><span class="s2">=</span><span class="s5">5</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setInv</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getInv</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setInv</span><span class="s2">() {</span>
+        <span class="s0">int </span><span class="s1">inv</span><span class="s2">=</span><span class="s5">5</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setInv</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getInv</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getParts</span><span class="s2">() {</span>
+        <span class="s1">Part part1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">OutsourcedPart</span><span class="s2">();</span>
+        <span class="s1">Part part2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">InhousePart</span><span class="s2">();</span>
+        <span class="s1">Set</span><span class="s2">&lt;</span><span class="s1">Part</span><span class="s2">&gt; </span><span class="s1">myParts</span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashSet</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">myParts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">part1</span><span class="s2">);</span>
+        <span class="s1">myParts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">part2</span><span class="s2">);</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setParts</span><span class="s2">(</span><span class="s1">myParts</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">myParts</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getParts</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setParts</span><span class="s2">() {</span>
+        <span class="s1">Part part1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">OutsourcedPart</span><span class="s2">();</span>
+        <span class="s1">Part part2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">InhousePart</span><span class="s2">();</span>
+        <span class="s1">Set</span><span class="s2">&lt;</span><span class="s1">Part</span><span class="s2">&gt; </span><span class="s1">myParts</span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashSet</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">myParts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">part1</span><span class="s2">);</span>
+        <span class="s1">myParts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">part2</span><span class="s2">);</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setParts</span><span class="s2">(</span><span class="s1">myParts</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">myParts</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">getParts</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">testToString</span><span class="s2">() {</span>
+        <span class="s1">String name</span><span class="s2">=</span><span class="s6">&quot;test product&quot;</span><span class="s2">;</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">product</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">testEquals</span><span class="s2">() {</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">Product newProduct</span><span class="s2">= </span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+        <span class="s1">newProduct</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">product</span><span class="s2">,</span><span class="s1">newProduct</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">testHashCode</span><span class="s2">() {</span>
+        <span class="s1">product</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">Product newProduct</span><span class="s2">= </span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+        <span class="s1">newProduct</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">product</span><span class="s2">.</span><span class="s1">hashCode</span><span class="s2">(),</span><span class="s1">newProduct</span><span class="s2">.</span><span class="s1">hashCode</span><span class="s2">());</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

@@ -18,6 +18,7 @@ D.  Add an “About” page to the application to describe your chosen customer�
 3. Created a new java class controller titled "AboutController"
 4. In the new AboutController I pretty much only included a GetMapping with a showpage method to return the page. This controller does not really have to do anything. Alternatiely I could have also just added this to the maincontroller. 
 5. Finally, in the mainscreen.html code, I added an about button mapped to the aboutcontroller to return the about page. Lines 56-57.
+6. Following evaluator notes, I editted lines 50-51 in the about.html text to fix my grammar/readability for customers.
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.

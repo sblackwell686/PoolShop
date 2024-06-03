@@ -1,0 +1,202 @@
+<html>
+<head>
+<title>PartTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #5f826b; font-style: italic;}
+.s4 { color: #68a67e; font-style: italic;}
+.s5 { color: #2aacb8;}
+.s6 { color: #6aab73;}
+.s7 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PartTest.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">demo</span><span class="s2">.</span><span class="s1">domain</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">BeforeEach</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">Test</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">HashSet</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Set</span><span class="s2">;</span>
+
+<span class="s0">import static </span><span class="s1">org</span><span class="s2">.</span><span class="s1">junit</span><span class="s2">.</span><span class="s1">jupiter</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">Assertions</span><span class="s2">.</span><span class="s1">assertEquals</span><span class="s2">;</span>
+
+<span class="s3">/**</span>
+ <span class="s3">* Project: demoDarbyFrameworks2-master</span>
+ <span class="s3">* Package: com.example.demo.domain</span>
+ <span class="s3">* </span><span class="s4">&lt;p&gt;</span>
+ <span class="s3">* User: carolyn.sher</span>
+ <span class="s3">* Date: 6/24/2022</span>
+ <span class="s3">* Time: 3:44 PM</span>
+ <span class="s3">* </span><span class="s4">&lt;p&gt;</span>
+ <span class="s3">* Created with IntelliJ IDEA</span>
+ <span class="s3">* To change this template use File | Settings | File Templates.</span>
+ <span class="s3">*/</span>
+<span class="s0">class </span><span class="s1">PartTest </span><span class="s2">{</span>
+    <span class="s1">Part partIn</span><span class="s2">;</span>
+    <span class="s1">Part partOut</span><span class="s2">;</span>
+    <span class="s1">@BeforeEach</span>
+    <span class="s0">void </span><span class="s1">setUp</span><span class="s2">() {</span>
+        <span class="s1">partIn</span><span class="s2">=</span><span class="s0">new </span><span class="s1">InhousePart</span><span class="s2">();</span>
+        <span class="s1">partOut</span><span class="s2">=</span><span class="s0">new </span><span class="s1">OutsourcedPart</span><span class="s2">();</span>
+    <span class="s2">}</span>
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getId</span><span class="s2">() {</span>
+        <span class="s1">Long idValue</span><span class="s2">=</span><span class="s5">4L</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getId</span><span class="s2">(), </span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getId</span><span class="s2">(), </span><span class="s1">idValue</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setId</span><span class="s2">() {</span>
+        <span class="s1">Long idValue</span><span class="s2">=</span><span class="s5">4L</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getId</span><span class="s2">(), </span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s1">idValue</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getId</span><span class="s2">(), </span><span class="s1">idValue</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getName</span><span class="s2">() {</span>
+        <span class="s1">String name</span><span class="s2">=</span><span class="s6">&quot;test inhouse part&quot;</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+        <span class="s1">name</span><span class="s2">=</span><span class="s6">&quot;test outsourced part&quot;</span><span class="s2">;</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setName</span><span class="s2">() {</span>
+        <span class="s1">String name</span><span class="s2">=</span><span class="s6">&quot;test inhouse part&quot;</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+        <span class="s1">name</span><span class="s2">=</span><span class="s6">&quot;test outsourced part&quot;</span><span class="s2">;</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getPrice</span><span class="s2">() {</span>
+        <span class="s0">double </span><span class="s1">price</span><span class="s2">=</span><span class="s5">1.0</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setPrice</span><span class="s2">(</span><span class="s1">price</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">price</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getPrice</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setPrice</span><span class="s2">(</span><span class="s1">price</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">price</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getPrice</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setPrice</span><span class="s2">() {</span>
+        <span class="s0">double </span><span class="s1">price</span><span class="s2">=</span><span class="s5">1.0</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setPrice</span><span class="s2">(</span><span class="s1">price</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">price</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getPrice</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setPrice</span><span class="s2">(</span><span class="s1">price</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">price</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getPrice</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getInv</span><span class="s2">() {</span>
+        <span class="s0">int </span><span class="s1">inv</span><span class="s2">=</span><span class="s5">5</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setInv</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getInv</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setInv</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getInv</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setInv</span><span class="s2">() {</span>
+        <span class="s0">int </span><span class="s1">inv</span><span class="s2">=</span><span class="s5">5</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setInv</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getInv</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setInv</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">inv</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getInv</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getProducts</span><span class="s2">() {</span>
+        <span class="s1">Product product1</span><span class="s2">= </span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+        <span class="s1">Product product2</span><span class="s2">= </span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+        <span class="s1">Set</span><span class="s2">&lt;</span><span class="s1">Product</span><span class="s2">&gt; </span><span class="s1">myProducts</span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashSet</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">myProducts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">product1</span><span class="s2">);</span>
+        <span class="s1">myProducts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">product2</span><span class="s2">);</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setProducts</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getProducts</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setProducts</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getProducts</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">setProducts</span><span class="s2">() {</span>
+        <span class="s1">Product product1</span><span class="s2">= </span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+        <span class="s1">Product product2</span><span class="s2">= </span><span class="s0">new </span><span class="s1">Product</span><span class="s2">();</span>
+        <span class="s1">Set</span><span class="s2">&lt;</span><span class="s1">Product</span><span class="s2">&gt; </span><span class="s1">myProducts</span><span class="s2">= </span><span class="s0">new </span><span class="s1">HashSet</span><span class="s2">&lt;&gt;();</span>
+        <span class="s1">myProducts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">product1</span><span class="s2">);</span>
+        <span class="s1">myProducts</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">product2</span><span class="s2">);</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setProducts</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getProducts</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setProducts</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">myProducts</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getProducts</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">testToString</span><span class="s2">() {</span>
+        <span class="s1">String name</span><span class="s2">=</span><span class="s6">&quot;test inhouse part&quot;</span><span class="s2">;</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">());</span>
+        <span class="s1">name</span><span class="s2">=</span><span class="s6">&quot;test outsourced part&quot;</span><span class="s2">;</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setName</span><span class="s2">(</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">name</span><span class="s2">,</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">testEquals</span><span class="s2">() {</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">Part newPartIn</span><span class="s2">=</span><span class="s0">new </span><span class="s1">InhousePart</span><span class="s2">();</span>
+        <span class="s1">newPartIn</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">partIn</span><span class="s2">,</span><span class="s1">newPartIn</span><span class="s2">);</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">Part newPartOut</span><span class="s2">=</span><span class="s0">new </span><span class="s1">OutsourcedPart</span><span class="s2">();</span>
+        <span class="s1">newPartOut</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">partOut</span><span class="s2">,</span><span class="s1">newPartOut</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">testHashCode</span><span class="s2">() {</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setId</span><span class="s2">(</span><span class="s5">1l</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">hashCode</span><span class="s2">(),</span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">hashCode</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s7">//Test for minInv</span>
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getMinInv</span><span class="s2">() {</span>
+        <span class="s0">int </span><span class="s1">minInv </span><span class="s2">= </span><span class="s5">1</span><span class="s2">; </span><span class="s7">// Set the minimum inventory to a test value</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setMinInv</span><span class="s2">(</span><span class="s1">minInv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">minInv</span><span class="s2">, </span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getMinInv</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setMinInv</span><span class="s2">(</span><span class="s1">minInv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">minInv</span><span class="s2">, </span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getMinInv</span><span class="s2">());</span>
+    <span class="s2">}</span>
+
+    <span class="s7">// Test for maxInv</span>
+    <span class="s1">@Test</span>
+    <span class="s0">void </span><span class="s1">getMaxInv</span><span class="s2">() {</span>
+        <span class="s0">int </span><span class="s1">maxInv </span><span class="s2">= </span><span class="s5">1000</span><span class="s2">; </span><span class="s7">// Set the maximum inventory to a test value</span>
+        <span class="s1">partIn</span><span class="s2">.</span><span class="s1">setMaxInv</span><span class="s2">(</span><span class="s1">maxInv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">maxInv</span><span class="s2">, </span><span class="s1">partIn</span><span class="s2">.</span><span class="s1">getMaxInv</span><span class="s2">());</span>
+        <span class="s1">partOut</span><span class="s2">.</span><span class="s1">setMaxInv</span><span class="s2">(</span><span class="s1">maxInv</span><span class="s2">);</span>
+        <span class="s1">assertEquals</span><span class="s2">(</span><span class="s1">maxInv</span><span class="s2">, </span><span class="s1">partOut</span><span class="s2">.</span><span class="s1">getMaxInv</span><span class="s2">());</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
